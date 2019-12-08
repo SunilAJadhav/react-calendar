@@ -1,0 +1,67 @@
+.calendar,
+.calendar-header,
+td,
+tr {
+    padding: 0;
+    margin: 0;
+}
+
+.calendar-container {
+    width: 300px;
+}
+
+.calendar {
+    background-color: white;
+    border-spacing: 0;
+    border-collapse: collapse;
+    width: 100%;
+}
+
+.calendar-header {
+    font-size: 1.2em;
+    color: darkblue;
+}
+
+.table-row td:first-child > span, .table-row td:last-child > span {
+    color: blue;
+}
+
+.day,
+.empty-slot,
+.week-day {
+    text-align: center;
+    font-size: 0.8em;
+    height: 40px;
+}
+
+.day {
+    cursor: pointer;
+    width: 24px;
+    height: 24px;
+    line-height: 24px;
+}
+
+.grid {
+    display: grid;
+    grid-template-columns: auto auto auto;
+    grid-gap: 40px;
+  }
+
+  .grid-element{
+    text-align: center;
+    padding: 20px 0;
+    margin-right: 30px;
+    display: inline-block;
+  }
+
+  .header{
+    margin: 0 auto;
+    text-align: center;
+    padding-top: 50px;
+    font-size: 44px;
+  }
+
+  #root {
+    max-width: 800px;
+    margin: 0 auto;
+  }
