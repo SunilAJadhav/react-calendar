@@ -9,11 +9,17 @@ export default class Calendar extends Component {
         super(props);
 
         this.state = {
-            date:  this.props.year +'-'+this.props.month,
-            year : this.props.year,
+            date:  this.props.year.format("Y") +'-'+this.props.month,
+            year : this.props.year.format("Y"),
             month : this.props.month
         }
     }
+
+    componentWillReceiveProps(nextProps) {
+            this.setState({ date: nextProps.year.format("Y") +'-'+nextProps.month,
+                            month : nextProps.month
+        });
+      }
 
     months = moment.months();
 

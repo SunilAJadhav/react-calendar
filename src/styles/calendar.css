@@ -6,10 +6,6 @@ tr {
     margin: 0;
 }
 
-.calendar-container {
-    width: 300px;
-}
-
 .calendar-weeks{
     background-color: lightgray;
 }
@@ -51,6 +47,19 @@ tr {
     grid-gap: 40px;
   }
 
+  
+@media screen and (max-width: 700px) {
+    .grid {
+        grid-template-columns: auto auto;
+    }
+  }
+
+@media screen and (max-width: 360px) {
+    .grid {
+        grid-template-columns: auto;
+    }
+  }
+
   .grid-element{
     text-align: center;
     padding: 20px 0;
@@ -68,4 +77,26 @@ tr {
   #root {
     max-width: 800px;
     margin: 0 auto;
+  }
+
+  .arrow-icon {
+    border: solid darkblue;
+    border-width: 0 10px 10px 0;
+    display: inline-block;
+    padding: 10px;
+  }
+  
+  .right {
+    transform: rotate(-45deg);
+    -webkit-transform: rotate(-45deg);
+  }
+  
+  .left {
+    margin-right: 50px;
+    transform: rotate(135deg);
+    -webkit-transform: rotate(135deg);
+  }
+
+  .current-year{
+      margin: 0 50px;
   }
