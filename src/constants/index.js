@@ -14,3 +14,5 @@ export const  MONTHS_LIST = [
   ];
 
 export const WEEKDAYS_SHORT =  ["Su", "M", "Tu", "W", "Th", "F", "Sa"];
+
+export const MONTHS = 12;

@@ -1,6 +1,6 @@
 import React, {Component} from 'react';
 import moment from 'moment';
-import {MONTHS_LIST, WEEKDAYS_SHORT} from '../constants' 
+import {MONTHS_LIST, WEEKDAYS_SHORT} from '../constants';
 import '../styles/calendar.css';
 
 export default class Calendar extends Component {
@@ -9,7 +9,6 @@ export default class Calendar extends Component {
         super(props);
 
         this.state = {
-            selectedDay: null,
             date:  this.props.year +'-'+this.props.month,
             year : this.props.year,
             month : this.props.month
@@ -103,7 +102,7 @@ export default class Calendar extends Component {
                 <table className="grid-element">
                     <span className="calendar-header"> {MONTHS_LIST[this.state.month-1]}</span>
                     <tbody className="calendar-body">
-                        <tr>
+                        <tr className="calendar-weeks">
                             {weekdays}
                         </tr>
                         {rowElements}

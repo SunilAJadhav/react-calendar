@@ -1,6 +1,6 @@
 import React, { Component } from 'react';
 import moment from 'moment';
-//import './App.css';
+import {MONTHS} from './constants';
 import Calendar from './components/Calendar';
 
 class App extends Component {
@@ -9,14 +9,28 @@ class App extends Component {
   constructor(props) {
     super(props);
 
+    this.state = {
+      date: moment(),
+    }
+
   }
 
   render() {
 
+    const eachMonthOfYear = [];
+
+    for (let i = 1; i <= MONTHS; i++) {
+        eachMonthOfYear.push(<Calendar key={i} year={this.state.date} month = {i} />)
+    }
+
     return (
       <div>
-      <header>{moment().format("Y")}</header>
-      <Calendar key={1} date={moment()} year="2019" month = {12} />
+        <header className="header">
+          {this.state.date.format("Y")}
+        </header>
+        <div className="grid">
+          <span>{eachMonthOfYear}</span>
+        </div>
       </div>
 
     )
