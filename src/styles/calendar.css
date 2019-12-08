@@ -41,6 +41,15 @@ tr {
     line-height: 24px;
 }
 
+.current-day {
+    background-color: lightblue;
+    width: 28px;
+    height: 28px;
+    line-height: 28px;
+    border-radius: 2%;
+    color: white;
+}
+
 .grid {
     display: grid;
     grid-template-columns: auto auto auto;

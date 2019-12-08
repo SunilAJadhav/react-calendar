@@ -17,7 +17,7 @@ export default class Calendar extends Component {
 
     componentWillReceiveProps(nextProps) {
             this.setState({ date: nextProps.year.format("Y") +'-'+nextProps.month,
-                            month : nextProps.month
+                            month : nextProps.month, year : nextProps.year.format("YYYY")
         });
       }
 
@@ -36,6 +36,16 @@ export default class Calendar extends Component {
     lastDayOfMonth = () => {
         let lastDay = moment(this.state.date).endOf('month').format('d');
         return lastDay;
+    }
+
+    isToday = () => {
+        if(this.state.year ===  moment().format('YYYY')){
+            // eslint-disable-next-line eqeqeq
+            if(this.state.month ==  moment().format('M')){
+                return true;
+            }
+        }
+        return false;
     }
  
     onDayClick = (e, day) => {
@@ -70,8 +80,11 @@ export default class Calendar extends Component {
 
         let daysInMonth = [];
         for (let d = 1; d <= this.daysInMonth(); d++) {
+            const isCurrentYear = this.isToday();
+            // eslint-disable-next-line eqeqeq
+            let className = ((isCurrentYear && (d == moment().format('D'))) ? "day current-day": "day");
             daysInMonth.push(
-                <td key={d} className="day" >
+                <td key={d} className= {className} >
                     <span onClick={(e)=>{this.onDayClick(e, d)}}>{d}</span>
                 </td>
             );
